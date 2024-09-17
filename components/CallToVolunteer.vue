@@ -1,6 +1,8 @@
 <template>
-  <div class="flex items-center flex-col z-10 text-center max-w-96">
-    <h1 class="text-primary text-3xl font-bold">Volunteer</h1>
+  <div
+    class="flex items-center flex-col z-10 text-center max-w-96 border-2 border-primary rounded-xl p-5"
+  >
+    <h1 class="text-primary text-3xl font-bold">Volunteer 🤝</h1>
     <p class="mt-3">
       Down Wonder is entirely run by a community of volunteers, and we would
       love to have you join us!
@@ -21,7 +23,7 @@
     <p class="mt-3">
       As a volunteer in Down Wonder you help take shifts. There is no
       requirement on how often, and all we expect of you is that you respect our
-      rules, and that you want to have fun 🥳
+      rules, and that you have fun 🥳
     </p>
   </div>
 </template>
