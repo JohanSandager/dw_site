@@ -7,6 +7,7 @@
     <MenuButton />
     <div class="h-[80vh]"></div>
     <CallToVolunteer />
-    <div class="h-screen"></div>
+    <IndicateScroll />
+    <div class="h-[40vh]"></div>
   </div>
 </template>
