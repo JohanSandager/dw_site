@@ -10,4 +10,5 @@
     <IndicateScroll />
     <div class="h-[40vh]"></div>
   </div>
+  <FadedLogo />
 </template>
