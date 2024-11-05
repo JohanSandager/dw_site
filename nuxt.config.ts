@@ -21,10 +21,10 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/supabase'],
 
   runtimeConfig: {
+    supabaseKey: process.env.SUPABASE_KEY || '',
     public: {
       supabaseUrl: process.env.SUPABASE_URL || '',
-      supabaseKey: process.env.SUPABASE_KEY || ''
-    }
+    },
   },
 
   supabase: {
