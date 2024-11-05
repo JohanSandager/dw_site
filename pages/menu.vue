@@ -2,7 +2,7 @@
   <div class="page-background flex items-center flex-col">
     <h1 class="text-5xl font-bold text-primary mt-5 mb-5">Menu</h1>
     <p v-if="data == null">No Data</p>
-    <div v-else class="flex flex-col w-96">
+    <div v-else class="flex flex-col max-w-96">
       <div v-for="category in data!['categories']" class="pb-2">
         <h2 class="text-3xl font-bold text-primary">{{ category["name"] }}</h2>
         <div v-for="item in data!['items']">
@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="h-[50vh]"></div>
+    <div class="h-[10vh]"></div>
   </div>
 </template>
 
