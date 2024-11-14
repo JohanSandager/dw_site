@@ -22,7 +22,6 @@ onMounted(() => {
   window.addEventListener("scroll", () => {
     translateX.value = -40 + scrollY / 10;
     translateY.value = 40 - scrollY / (window.innerWidth / 160);
-    console.log(translateX.value + " " + translateY.value);
   });
 });
 </script>
