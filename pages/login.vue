@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col">
-    <button @click="signInWithOtp">Sign In with E-Mail</button>
+  <div class="flex flex-col items-center">
+    <h1 class="text-5xl font-bold text-primary my-6">Sign In with E-Mail</h1>
     <div>
       <p>Email</p>
       <input v-model="email" type="email" />
@@ -9,6 +9,12 @@
       <p>Password</p>
       <input v-model="password" type="password" />
     </div>
+    <button
+      @click="signInWithOtp"
+      class="border-[1px] rounded-md px-4 py-1 mt-4 active:bg-primary"
+    >
+      Login
+    </button>
   </div>
 </template>
 

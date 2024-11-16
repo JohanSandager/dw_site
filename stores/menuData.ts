@@ -62,9 +62,13 @@ export const useMenuDataStore = defineStore({
 
       this.fetchItems();
     },
-    async incrementWeight(id: number, weight: number) {
+    async incrementWeight(id: number, weight: number, category: number) {
       const supabase = useSupabaseClient();
-
+      await supabase
+        .from("items")
+        .update({ weight: weight })
+        .eq("category", category)
+        .eq("weight", weight + 1);
       await supabase
         .from("items")
         .update({ weight: weight + 1 })
@@ -72,13 +76,37 @@ export const useMenuDataStore = defineStore({
 
       this.fetchItems();
     },
-    async decrementWeight(id: number, weight: number) {
+    async decrementWeight(id: number, weight: number, category: number) {
       const supabase = useSupabaseClient();
-
+      await supabase
+        .from("items")
+        .update({ weight: weight })
+        .eq("category", category)
+        .eq("weight", weight - 1);
       await supabase
         .from("items")
         .update({ weight: weight - 1 })
         .eq("id", id);
+
+      this.fetchItems();
+    },
+    async newItem(item: MenuItem) {
+      const supabase = useSupabaseClient();
+
+      await supabase.from("items").insert({
+        name: item.name,
+        description: item.description,
+        price: item.price,
+        category: item.category,
+        weight: 2,
+      });
+
+      this.fetchItems();
+    },
+    async deleteItem(item: MenuItem) {
+      const supabase = useSupabaseClient();
+
+      await supabase.from("items").delete().eq("id", item.id);
 
       this.fetchItems();
     },

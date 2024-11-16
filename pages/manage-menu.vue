@@ -4,7 +4,9 @@
       <h1>Loading...</h1>
     </div>
     <div v-else class="flex flex-col max-w-96">
-      <h1>Manage Menu</h1>
+      <h1 class="text-5xl font-bold text-primary self-center my-6">
+        Manage Menu
+      </h1>
       <div v-for="category in categories" class="pb-2">
         <EditCategory :category="category"></EditCategory>
         <div v-for="item in items">
@@ -12,6 +14,7 @@
             <EditItem :item="item"></EditItem>
           </div>
         </div>
+        <NewItem></NewItem>
       </div>
     </div>
   </div>
