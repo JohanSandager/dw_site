@@ -93,12 +93,14 @@ export const useMenuDataStore = defineStore({
     async newItem(item: MenuItem) {
       const supabase = useSupabaseClient();
 
+      var count = await this.getCount(item.category);
+
       await supabase.from("items").insert({
         name: item.name,
         description: item.description,
         price: item.price,
         category: item.category,
-        weight: 2,
+        weight: count + 1,
       });
 
       this.fetchItems();
@@ -109,6 +111,18 @@ export const useMenuDataStore = defineStore({
       await supabase.from("items").delete().eq("id", item.id);
 
       this.fetchItems();
+    },
+    async getCount(category: number) {
+      const supabase = useSupabaseClient();
+      console.log("Category: ", category);
+      var response = await supabase
+        .from("items")
+        .select()
+        .eq("category", category);
+      var count = response.data?.length;
+      console.log("Count: " + count);
+
+      return count;
     },
   },
 });
