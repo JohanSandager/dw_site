@@ -3,8 +3,15 @@
     <MenuItemPrice :price="item.price" class="mr-4"></MenuItemPrice>
     <button @click="toggleEdit">Edit</button>
   </div>
-  <div v-if="isEditing" class="flex">
-    <input placeholder="New Price" v-model="newPrice" class="mr-4" />
+  <div
+    v-if="isEditing"
+    class="flex flex-col border border-dashed rounded-md p-1 mb-2"
+  >
+    <input
+      placeholder="New Price"
+      v-model="newPrice"
+      class="border-b-[1px] border-dashed bg-secondary p-1 pl-2 focus:outline-none focus:shadow-md max-w-16"
+    />
     <button @click="saveEdit" class="mr-2">Save</button>
     <button @click="toggleEdit">Cancel</button>
   </div>
