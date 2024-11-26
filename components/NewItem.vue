@@ -2,23 +2,35 @@
   <div
     v-if="!creatingNewItem"
     @click="toggleCreatingNewItem"
-    class="flex justify-around mt-2 p-2 border-[1px] rounded-md active:bg-primary"
+    class="flex justify-around mt-2 p-2 border-[1px] rounded-md border-dashed active:bg-primary"
   >
     <p>+</p>
   </div>
   <div
     v-else
-    class="flex flex-col items-center justify-around mt-2 p-2 border-[1px] rounded-md"
+    class="flex flex-col items-center justify-around mt-2 p-2 border-[1px] rounded-md border-dashed"
   >
-    <input placeholder="Title" v-model="newTitle" class="mr-4" />
-    <input placeholder="Description" v-model="newDescr" class="mr-4" />
+    <input
+      placeholder="Title"
+      v-model="newTitle"
+      class="border-b-[1px] border-dashed bg-secondary p-1 pl-2 focus:outline-none focus:shadow-md mr-4"
+    />
+    <input
+      placeholder="Description"
+      v-model="newDescr"
+      class="border-b-[1px] border-dashed bg-secondary p-1 pl-2 focus:outline-none focus:shadow-md mr-4"
+    />
     <input
       placeholder="Price"
       v-model="newPrice"
-      class="mr-4"
+      class="border-b-[1px] border-dashed bg-secondary p-1 pl-2 focus:outline-none focus:shadow-md mr-4"
       inputmode="decimal"
     />
-    <select id="numberDropdown" v-model="selectedNumber">
+    <select
+      id="numberDropdown"
+      v-model="selectedNumber"
+      class="border-b-[1px] border-dashed bg-secondary p-1 pl-2 focus:outline-none"
+    >
       <option v-for="number in numbers" :key="number" :value="number">
         {{ number }}
       </option>
