@@ -4,7 +4,11 @@
     <button @click="toggleEdit">Edit</button>
   </div>
   <div v-if="isEditing" class="flex">
-    <input placeholder="New Title" v-model="newTitle" class="mr-4" />
+    <input
+      placeholder="New Name"
+      v-model="newTitle"
+      class="border-b-[1px] border-dashed bg-secondary p-1 pl-2 focus:outline-none focus:shadow-md mr-4"
+    />
     <button @click="saveEdit" class="mr-2">Save</button>
     <button @click="toggleEdit">Cancel</button>
   </div>
