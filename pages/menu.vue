@@ -2,7 +2,7 @@
   <div class="page-background flex items-center flex-col">
     <NuxtLink
       class="text-5xl font-bold text-primary mt-5 mb-5"
-      to="/manage-menu"
+      to="/admin/admin-landing"
       >Menu</NuxtLink
     >
     <p v-if="isLoading">Loading...</p>
